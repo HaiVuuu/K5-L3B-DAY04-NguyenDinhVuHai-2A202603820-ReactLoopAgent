@@ -6,7 +6,8 @@ from agent import run_agent
 from providers import Provider
 from status_tools import StatusTools
 from bonus.tools import BonusTools
-
+from dotenv import load_dotenv
+load_dotenv()  
 
 def run(question, mode, provider_name, model, max_steps, fail=False, bonus=False):
     provider = Provider(provider_name, model)

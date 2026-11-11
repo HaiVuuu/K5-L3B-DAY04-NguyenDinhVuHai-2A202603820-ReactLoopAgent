@@ -15,7 +15,7 @@ CONFIG = {
 def post_json(url, headers, payload):
     req = urllib.request.Request(url, data=json.dumps(payload).encode(), headers={'Content-Type': 'application/json', **headers})
     try:
-        with urllib.request.urlopen(req, timeout=60) as response:
+        with urllib.request.urlopen(req, timeout=600)as response:
             return json.load(response)
     except urllib.error.HTTPError as exc:
         # Do not print response bodies: they may contain account or request data.

@@ -62,7 +62,7 @@ def main():
         print(f"Đang chạy {case['id']}", flush=True)
         item = run_case(case, args)
         print(f"{case['id']}: {item['grade'].get('score')} ({item['grade']['status']})", flush=True)
-        #time.sleep(60)
+        time.sleep(60)
         return item
     with ThreadPoolExecutor(max_workers=args.workers) as pool:
         results = list(pool.map(run_and_print, selected))
